@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<div class="container">
+
+<div class="row">
+
+<div class="col-sm-12">
+
+<div class="alert alert-success">
+
+        <h3 id="np">Next Person:</h3>
+        <div class=" bounceIn" id="tester-2"> </div>
+
+
+</div>
+        
+
+</div>
+
+
+</div>
+
+
+<div class="row">
+
+<br>
+
+
+<div class="col-md-8">
+ <div class="btn btn-dark">
+       
+<div class="row">
+
+        <div class="col-md-6">
+
+
+                        <h3 id="cr" >Current Customer is  : </h3>
+                        <div  class=" bounceIn" id="tester-1"></div>
+
+        </div>
+
+<div class="col-md-12">
+
+  <form id="post-form" action="" method="POST">
+
+    {% csrf_token %}
+                                
+     <div  id="err-msg"></div>
+                                                         
+     <button style="width:100%;background:rgb(255, 173, 255)" type="submit" class=" bounceIn btn">Accept Customer</button>
+  </form>
+
+
+</div>
+
+
+
+</div>
+ 
+</div>
+
+
+</div>
+                
+
+
+<div class="col-md-4 ">
+
+
+        <div class="card"  style="width:100%;">
+                        {% if operator.image %}
+                        <img width="260px;" height="260px;" src="{{ operator.image.url }}" class="card-img-top" alt="">
+                        {% endif %}
+                        <div class="card-body">
+                                        <h2 > Name:{{operator.name}}</h2>
+                                        <h2>Surname:{{operator.surname}}</h2>
+                                        <h3>Service Type :{{operator.service.name}}</h3>
+                          <a href="#" class="btn btn-primary">Good Job !</a>
+                        </div>
+                      </div>
+</div>
+
+
+
+
+</div>
+  
+<p id="datas" data-pk={{operator.pk}} ></p>
+</div>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script src="{% static 'js/test.js' %}"></script>
+
+{% endblock %}

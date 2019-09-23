@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+<div class="container">
+<div class="row">
+
+<div style="margin: 20px 0px;" class="col-md-6">
+<a href="{% url 'oper:create' %}">
+    <button style="padding:40px;" class="btn btn-dark">
+   <h2>Operators</h2> 
+   <i style="font-size: 8rem;" class="fas fa-headset"></i>
+
+</button>
+</a>
+
+
+</div>
+
+
+
+<div style="margin: 20px 0px;" class="col-md-6">
+
+    <a href="{% url 'turn:create' %}">
+        <button  style="padding:40px;" class="btn btn-dark">
+       <h2>Consumers</h2> 
+       <i style="font-size: 8rem;" class="fas fa-users"></i>
+    
+    </button>
+    </a>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

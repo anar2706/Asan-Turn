@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container">
+
+<br>
+<div class="alert alert-success">
+
+                <h3 id="np">Next Person:</h3>
+                <div class=" bounceIn" id="tester-2"> </div>
+        
+        
+        </div>
+<div class="row">
+
+<div  class="col-md-6 btn btn-dark">
+
+
+        <h2>Name :{{turn.name}}   </h2>
+        <h2>Last Name :{{turn.surname}}</h2>
+    
+    
+        <h3>Service Type :{{turn.service}}</h3>
+        <h3>Your turn is : {{turn.code}}</h3>
+    
+    
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+  
+
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="{% static 'js/turn-test.js' %}"></script>
+
+
+
+{% endblock %}

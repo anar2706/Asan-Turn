@@ -1,0 +1,91 @@
+
+$(document).on('submit','#post-form',function(e){
+    e.preventDefault();
+
+    $.ajax({
+
+
+        type:'POST',
+        url:'http://127.0.0.1:8000/api/',
+        data :{
+
+            
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+
+
+        },
+        success:function(data){
+            
+            console.log(data.name); // log the returned json to the console
+            console.log("success");
+            renderHtml(data)
+        },
+        error:function(err){
+           
+            alert('There is no person in the turn')
+        }
+
+
+    })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('#elwind').on('click',function(){
+
+
+    $.ajax({
+        method :'GET',
+        url: "http://127.0.0.1:8000/api/",
+        success: function( data ) {
+            console.log(data);
+            console.log('success');
+            renderHtml(data)
+        },
+        error:function(error){
+            console.log(error)
+        }
+    
+        }); 
+
+
+})
+
+
+
+    function renderHtml(data){
+
+        var container = $('.lol')
+        var string = ''
+
+        for(i=0;i<data.length;i++){
+
+           if(data[i].state==1){
+                console.log('you are doing good')
+                data[i].state=2
+                container.html('<h2>'+data[i].id+'</h2>')
+                break;
+           }
+
+
+                
+            
+          
+           
+        }
+    }
